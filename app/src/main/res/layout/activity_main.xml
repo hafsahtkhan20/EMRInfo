@@ -1,0 +1,324 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:background="#373737"
+        android:minHeight="?attr/actionBarSize"
+        android:theme="?attr/actionBarTheme"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/mic_button"
+        android:layout_width="40dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="952dp"
+        android:layout_marginEnd="32dp"
+        app:backgroundTint="#000080"
+        app:icon="@drawable/mic"
+        app:iconGravity="textEnd"
+        app:layout_constraintBottom_toBottomOf="@+id/toolbar"
+        app:layout_constraintEnd_toEndOf="@+id/toolbar"
+        app:layout_constraintTop_toTopOf="@+id/toolbar" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/language_button"
+        android:layout_width="40dp"
+        android:layout_height="50dp"
+        android:layout_marginEnd="24dp"
+        app:backgroundTint="#000080"
+        app:icon="@drawable/language"
+        app:iconGravity="textEnd"
+        app:layout_constraintBottom_toBottomOf="@+id/toolbar"
+        app:layout_constraintEnd_toStartOf="@+id/mic_button"
+        app:layout_constraintTop_toTopOf="@+id/toolbar" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/settings_button"
+        android:layout_width="40dp"
+        android:layout_height="50dp"
+        android:layout_marginEnd="24dp"
+        app:backgroundTint="#000080"
+        app:icon="@drawable/settings"
+        app:iconGravity="textEnd"
+        app:layout_constraintBottom_toBottomOf="@+id/toolbar"
+        app:layout_constraintEnd_toStartOf="@+id/language_button"
+        app:layout_constraintTop_toTopOf="@+id/toolbar" />
+
+    <EditText
+        android:id="@+id/pSuffix"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:hint="Suffix"
+        app:layout_constraintStart_toEndOf="@+id/navigationView"
+        app:layout_constraintTop_toBottomOf="@+id/toolbar" />
+
+    <EditText
+        android:id="@+id/pFirst"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="16dp"
+        android:hint="First Name"
+        app:layout_constraintStart_toEndOf="@+id/pSuffix"
+        app:layout_constraintTop_toBottomOf="@+id/toolbar" />
+
+    <EditText
+        android:id="@+id/pMI"
+        android:layout_width="60dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="16dp"
+        android:hint="MI"
+        app:layout_constraintStart_toEndOf="@+id/pFirst"
+        app:layout_constraintTop_toBottomOf="@+id/toolbar" />
+
+    <EditText
+        android:id="@+id/pLast"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="16dp"
+        android:hint="Last Name"
+        app:layout_constraintStart_toEndOf="@+id/pMI"
+        app:layout_constraintTop_toBottomOf="@+id/toolbar" />
+
+    <EditText
+        android:id="@+id/pDOB"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="24dp"
+        android:hint="DOB:YYYY-MM-DD"
+        app:layout_constraintStart_toEndOf="@+id/navigationView"
+        app:layout_constraintTop_toBottomOf="@+id/pSuffix" />
+
+    <EditText
+        android:id="@+id/pSex"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="24dp"
+        android:hint="Sex M/F"
+        app:layout_constraintStart_toEndOf="@+id/pDOB"
+        app:layout_constraintTop_toBottomOf="@+id/pSuffix" />
+
+    <EditText
+        android:id="@+id/pGender"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="24dp"
+        android:hint="Preferred Gender"
+        app:layout_constraintStart_toEndOf="@+id/pSex"
+        app:layout_constraintTop_toBottomOf="@+id/pSuffix" />
+
+    <EditText
+        android:id="@+id/pSSN"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="24dp"
+        android:hint="SSN"
+        app:layout_constraintStart_toEndOf="@+id/pGender"
+        app:layout_constraintTop_toBottomOf="@+id/pSuffix" />
+
+    <EditText
+        android:id="@+id/pEmail"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="textEmailAddress"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="24dp"
+        android:hint="Email"
+        app:layout_constraintStart_toEndOf="@+id/navigationView"
+        app:layout_constraintTop_toBottomOf="@+id/pDOB" />
+
+    <EditText
+        android:id="@+id/pPhone"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="phone"
+        android:hint="Cell No."
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="24dp"
+        app:layout_constraintStart_toEndOf="@+id/pEmail"
+        app:layout_constraintTop_toBottomOf="@+id/pDOB" />
+
+    <EditText
+        android:id="@+id/pAddress"
+        android:layout_width="700dp"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="textPostalAddress"
+        android:hint="Street Address"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="24dp"
+        app:layout_constraintStart_toEndOf="@+id/navigationView"
+        app:layout_constraintTop_toBottomOf="@+id/pEmail"
+        />
+
+    <EditText
+        android:id="@+id/pCity"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="24dp"
+        android:hint="City Name"
+        app:layout_constraintStart_toEndOf="@+id/navigationView"
+        app:layout_constraintTop_toBottomOf="@+id/pAddress" />
+
+    <EditText
+        android:id="@+id/pState"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="24dp"
+        android:hint="State"
+        app:layout_constraintStart_toEndOf="@+id/pCity"
+        app:layout_constraintTop_toBottomOf="@+id/pAddress" />
+
+    <EditText
+        android:id="@+id/pZIP"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="24dp"
+        android:hint="Zip code"
+        app:layout_constraintStart_toEndOf="@+id/pState"
+        app:layout_constraintTop_toBottomOf="@+id/pAddress" />
+
+    <com.google.android.material.navigation.NavigationView
+        android:id="@+id/navigationView"
+        android:layout_width="200dp"
+        android:layout_height="702dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/toolbar">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <Button
+                android:id="@+id/demo"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:layout_marginBottom="10dp"
+                android:background="@drawable/mybutton"
+                android:text="Demographics"
+                android:textSize="21dp" />
+
+            <Button
+                android:id="@+id/medical"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:layout_marginBottom="10dp"
+                android:background="@drawable/mybutton"
+                android:text="Medical History"
+                android:textSize="21dp" />
+
+            <Button
+                android:id="@+id/family"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:layout_marginBottom="10dp"
+                android:background="@drawable/mybutton"
+                android:text="Family History"
+                android:textSize="21dp" />
+
+            <Button
+                android:id="@+id/medication"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:layout_marginBottom="10dp"
+                android:background="@drawable/mybutton"
+                android:text="Medication"
+                android:textSize="21dp" />
+
+            <Button
+                android:id="@+id/surgery"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:layout_marginBottom="10dp"
+                android:background="@drawable/mybutton"
+                android:text="Surgeries"
+                android:textSize="21dp" />
+
+            <Button
+                android:id="@+id/hospital"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:layout_marginBottom="10dp"
+                android:background="@drawable/mybutton"
+                android:text="Hospitalization"
+                android:textSize="21dp" />
+
+            <Button
+                android:id="@+id/insurance"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:layout_marginBottom="10dp"
+                android:background="@drawable/mybutton"
+                android:text="Insurance"
+                android:textSize="21dp" />
+
+            <Button
+                android:id="@+id/care"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:layout_marginBottom="10dp"
+                android:background="@drawable/mybutton"
+                android:text="Care Plan"
+                android:textSize="21dp" />
+
+            <Button
+                android:id="@+id/immunization"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:background="@drawable/mybutton"
+                android:text="Immunizations"
+                android:textSize="21dp" />
+        </LinearLayout>
+
+    </com.google.android.material.navigation.NavigationView>
+
+    <Button
+        android:id="@+id/patientButton"
+        android:layout_width="200dp"
+        android:layout_height="49dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="150dp"
+        android:text="Find Patient"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/navigationView"
+        app:layout_constraintTop_toBottomOf="@+id/toolbar" />
+
+    <TextView
+        android:id="@+id/patientID"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="150dp"
+        android:text="Patient ID: "
+        android:textSize="23dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/patientButton"
+        app:layout_constraintTop_toBottomOf="@+id/toolbar" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
