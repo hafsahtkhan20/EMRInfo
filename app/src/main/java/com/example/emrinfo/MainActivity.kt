@@ -1,5 +1,6 @@
 package com.example.emrinfo
 
+import android.annotation.SuppressLint
 import android.os.Build
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -12,6 +13,7 @@ import android.widget.Toast
 import androidx.annotation.RequiresApi
 import io.jsonwebtoken.Jwts
 import io.jsonwebtoken.SignatureAlgorithm
+import kotlinx.coroutines.DelicateCoroutinesApi
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.launch
@@ -44,6 +46,8 @@ class MainActivity : AppCompatActivity() {
     private lateinit var findButton: Button
 
     @RequiresApi(Build.VERSION_CODES.O)
+    @OptIn(DelicateCoroutinesApi::class)
+    @SuppressLint("SetJavaScriptEnabled", "SetTextI18n")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
@@ -80,6 +84,11 @@ class MainActivity : AppCompatActivity() {
                         accessTokenRequest(jwt)
                     }
 
+                    Log.d("Hafsah", "JWT: $jwt")
+
+                }
+                else {
+                    Log.d("Hafsah", "Privatekey Null")
                 }
             }
         }
@@ -89,11 +98,12 @@ class MainActivity : AppCompatActivity() {
     @RequiresApi(Build.VERSION_CODES.O)
     private fun readPEMPrivateFile(): PrivateKey? {
         try {
-            val inputStream = applicationContext.assets.open("privatekey.pem")
+            val inputStream = applicationContext.assets.open("privatekeynew.pem")
+            Log.d("Hafsah", "File Opened")
             val reader = InputStreamReader(inputStream)
             val pemContent = reader.readText()
             reader.close()
-
+            Log.d("Hafsah", "Error is furthere here")
             val privateKeyReplace = pemContent.replace("\\n".toRegex(), "")
                 .replace("-----BEGIN RSA PRIVATE KEY-----", "")
                 .replace("-----END RSA PRIVATE KEY-----", "")
@@ -109,6 +119,8 @@ class MainActivity : AppCompatActivity() {
         return null
     }
 
+    @SuppressLint("SetTextI18n")
+    @OptIn(DelicateCoroutinesApi::class)
     private fun accessTokenRequest(jwt: String) {
         runOnUiThread { patientID.text = "Patient ID: Fetching Access Token..."}
 
@@ -142,7 +154,7 @@ class MainActivity : AppCompatActivity() {
                 }
                 else {
                     Log.d("Hafsah", "Error Access Token Response ${response.message}")
-                    patientID.text = ""
+                    runOnUiThread {patientID.text = "Error"}
                 }
             }
 
@@ -152,7 +164,8 @@ class MainActivity : AppCompatActivity() {
         })
     }
 
-
+    @SuppressLint("SetTextI18n")
+    @Suppress("SameParameterValue")
     private fun searchPatientByNameAndDOB(
         token: String, lastName: String, firstName: String, dob: String
     ) {
@@ -181,6 +194,7 @@ class MainActivity : AppCompatActivity() {
         })
     }
 
+    @SuppressLint("SetTextI18n")
     fun extractPatientInfoFromXml(xml: String) {
         val docBuilder = DocumentBuilderFactory.newInstance().newDocumentBuilder()
         val doc: Document = docBuilder.parse(InputSource(StringReader(xml)))
