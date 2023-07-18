@@ -98,12 +98,12 @@ class MainActivity : AppCompatActivity() {
     @RequiresApi(Build.VERSION_CODES.O)
     private fun readPEMPrivateFile(): PrivateKey? {
         try {
-            val inputStream = applicationContext.assets.open("privatekeynew.pem")
+            val inputStream = applicationContext.assets.open("privatekey.pem")
             Log.d("Hafsah", "File Opened")
             val reader = InputStreamReader(inputStream)
             val pemContent = reader.readText()
             reader.close()
-            Log.d("Hafsah", "Error is furthere here")
+
             val privateKeyReplace = pemContent.replace("\\n".toRegex(), "")
                 .replace("-----BEGIN RSA PRIVATE KEY-----", "")
                 .replace("-----END RSA PRIVATE KEY-----", "")
