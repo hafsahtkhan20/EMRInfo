@@ -44,6 +44,14 @@ class MainActivity : AppCompatActivity() {
     private lateinit var patientDOB: EditText
     private lateinit var patientID: TextView
     private lateinit var findButton: Button
+    private lateinit var raceText: EditText
+    private lateinit var preferredText: EditText
+    private lateinit var patientSex: EditText
+    private lateinit var patientPhone: EditText
+    private lateinit var patientAddress: EditText
+    private lateinit var patientCity: EditText
+    private lateinit var patientState: EditText
+    private lateinit var patientZIP: EditText
 
     @RequiresApi(Build.VERSION_CODES.O)
     @OptIn(DelicateCoroutinesApi::class)
@@ -57,6 +65,14 @@ class MainActivity : AppCompatActivity() {
         patientDOB = findViewById(R.id.pDOB)
         patientID = findViewById(R.id.patientID)
         findButton = findViewById(R.id.patientButton)
+        raceText = findViewById(R.id.pRace)
+        preferredText = findViewById(R.id.pGender)
+        patientSex = findViewById(R.id.pSex)
+        patientPhone = findViewById(R.id.pPhone)
+        patientAddress = findViewById(R.id.pAddress)
+        patientCity = findViewById(R.id.pCity)
+        patientState = findViewById(R.id.pState)
+        patientZIP = findViewById(R.id.pZIP)
 
         findButton.setOnClickListener {
             if (patientFirst.text.toString().isEmpty() &&
@@ -169,7 +185,16 @@ class MainActivity : AppCompatActivity() {
     private fun searchPatientByNameAndDOB(
         token: String, lastName: String, firstName: String, dob: String
     ) {
-        runOnUiThread{patientID.text = "Patient ID: Searching Patient..."}
+        runOnUiThread{patientID.text = "Patient ID: Searching Patient..."
+
+            raceText.setText("...")
+            preferredText.setText("...")
+            patientSex.setText("...")
+            patientPhone.setText("...")
+            patientAddress.setText("...")
+            patientCity.setText("...")
+            patientState.setText("...")
+            patientZIP.setText("...")}
 
         val request = Request.Builder()
             .url("https://fhir.epic.com/interconnect-fhir-oauth/api/FHIR/R4/Patient?family=$lastName&given=$firstName&birthdate=$dob")
@@ -208,8 +233,46 @@ class MainActivity : AppCompatActivity() {
         val matchResult = regex.find(fullUrl)
         val lastIndex = matchResult?.groupValues?.lastOrNull()
 
+        val fullResource = entry.getElementsByTagName("resource").item(0) as Element
+        val fullRace = fullResource.getElementsByTagName("display").item(0) as Element
+        val dRace = fullRace.getAttribute("value")
+
+        val legalSex = fullResource.getElementsByTagName("display").item(1) as Element
+        val pLeg = legalSex.getAttribute("value")
+
+        val birthSex = fullResource.getElementsByTagName("display").item(2) as Element
+        val pSex = birthSex.getAttribute("value")
+
+        val homePhone = fullResource.getElementsByTagName("telecom").item(0) as Element
+        val phoneVal = homePhone.getElementsByTagName("value").item(0) as Element
+        val pPhone = phoneVal.getAttribute("value")
+
+        val fullAddress = fullResource.getElementsByTagName("address").item(0) as Element
+
+        val lineAddress = fullAddress.getElementsByTagName("line").item(0) as Element
+        val patAddress = lineAddress.getAttribute("value")
+
+        val fullCity = fullAddress.getElementsByTagName("city").item(0) as Element
+        val patCity = fullCity.getAttribute("value")
+
+        val fullState = fullAddress.getElementsByTagName("state").item(0) as Element
+        val patState = fullState.getAttribute("value")
+
+        val fullZIP = fullAddress.getElementsByTagName("postalCode").item(0) as Element
+        val patZIP = fullZIP.getAttribute("value")
+
         runOnUiThread {
             patientID.text = if (lastIndex.isNullOrEmpty()) "..." else "Patient ID : $lastIndex"
+
+            raceText.setText(if (dRace.isNullOrEmpty()) "..." else "$dRace")
+            preferredText.setText(if (pLeg.isNullOrEmpty()) "..." else "$pLeg")
+            patientSex.setText(if (pSex.isNullOrEmpty()) "..." else "$pSex")
+            patientPhone.setText(if (pPhone.isNullOrEmpty()) "..." else "$pPhone")
+            patientAddress.setText(if (patAddress.isNullOrEmpty()) "..." else "$patAddress")
+            patientCity.setText(if (patCity.isNullOrEmpty()) "..." else "$patCity")
+            patientState.setText(if (patState.isNullOrEmpty()) "..." else "$patState")
+            patientZIP.setText(if (patZIP.isNullOrEmpty()) "..." else "$patZIP")
+
         }
     }
 }

@@ -71,8 +71,10 @@
         android:layout_marginStart="32dp"
         android:layout_marginTop="16dp"
         android:hint="First Name"
+        android:shadowColor="#313435"
         app:layout_constraintStart_toEndOf="@+id/pSuffix"
-        app:layout_constraintTop_toBottomOf="@+id/toolbar" />
+        app:layout_constraintTop_toBottomOf="@+id/toolbar"
+        />
 
     <EditText
         android:id="@+id/pMI"
@@ -133,6 +135,16 @@
         android:hint="SSN"
         app:layout_constraintStart_toEndOf="@+id/pGender"
         app:layout_constraintTop_toBottomOf="@+id/pSuffix" />
+
+    <EditText
+        android:id="@+id/pRace"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="24dp"
+        android:hint="Race"
+        app:layout_constraintStart_toEndOf="@+id/pPhone"
+        app:layout_constraintTop_toBottomOf="@+id/pDOB" />
 
     <EditText
         android:id="@+id/pEmail"
