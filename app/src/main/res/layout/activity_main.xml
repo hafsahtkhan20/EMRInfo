@@ -70,11 +70,11 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="32dp"
         android:layout_marginTop="16dp"
-        android:hint="First Name"
+        android:backgroundTint="@android:color/holo_red_light"
+        android:hint="First Name (Req)"
         android:shadowColor="#313435"
         app:layout_constraintStart_toEndOf="@+id/pSuffix"
-        app:layout_constraintTop_toBottomOf="@+id/toolbar"
-        />
+        app:layout_constraintTop_toBottomOf="@+id/toolbar" />
 
     <EditText
         android:id="@+id/pMI"
@@ -92,7 +92,8 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="32dp"
         android:layout_marginTop="16dp"
-        android:hint="Last Name"
+        android:backgroundTint="@android:color/holo_red_light"
+        android:hint="Last Name (Req)"
         app:layout_constraintStart_toEndOf="@+id/pMI"
         app:layout_constraintTop_toBottomOf="@+id/toolbar" />
 
@@ -102,7 +103,8 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:layout_marginTop="24dp"
-        android:hint="DOB:YYYY-MM-DD"
+        android:backgroundTint="@android:color/holo_red_light"
+        android:hint="DOB:YYYY-MM-DD (Req)"
         app:layout_constraintStart_toEndOf="@+id/navigationView"
         app:layout_constraintTop_toBottomOf="@+id/pSuffix" />
 

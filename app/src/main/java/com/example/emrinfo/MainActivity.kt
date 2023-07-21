@@ -1,16 +1,17 @@
 package com.example.emrinfo
 
 import android.annotation.SuppressLint
+import android.content.Intent
 import android.os.Build
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.provider.DocumentsContract
 import android.util.Log
+import android.view.View
 import android.widget.Button
 import android.widget.EditText
 import android.widget.TextView
 import android.widget.Toast
 import androidx.annotation.RequiresApi
+import androidx.appcompat.app.AppCompatActivity
 import io.jsonwebtoken.Jwts
 import io.jsonwebtoken.SignatureAlgorithm
 import kotlinx.coroutines.DelicateCoroutinesApi
@@ -36,6 +37,8 @@ import java.security.PrivateKey
 import java.security.spec.PKCS8EncodedKeySpec
 import java.util.Base64
 import javax.xml.parsers.DocumentBuilderFactory
+import android.view.View.OnClickListener as OnClickListener1
+
 
 class MainActivity : AppCompatActivity() {
 
@@ -73,6 +76,11 @@ class MainActivity : AppCompatActivity() {
         patientCity = findViewById(R.id.pCity)
         patientState = findViewById(R.id.pState)
         patientZIP = findViewById(R.id.pZIP)
+
+        val medButton: Button = findViewById(R.id.medical)
+        medButton.setOnClickListener {
+            startActivity(Intent(this, MedicalHistory::class.java))
+        }
 
         findButton.setOnClickListener {
             if (patientFirst.text.toString().isEmpty() &&
