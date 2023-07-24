@@ -262,6 +262,338 @@
         app:layout_constraintStart_toEndOf="@+id/navigationView"
         app:layout_constraintTop_toBottomOf="@+id/allergies" />
 
+    <TableLayout
+        android:id = "@+id/medTable"
+        android:layout_width="800dp"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        app:layout_constraintStart_toEndOf="@+id/navigationView"
+        app:layout_constraintTop_toBottomOf="@+id/medTitle"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp">
+
+        <TableRow
+            android:background = "@drawable/border">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="Date:"
+                android:textColor="@color/black"
+                android:padding="5sp"
+                android:textSize="20sp"
+                android:layout_weight="1.5"
+                android:layout_gravity="start"
+                />
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="Diagnosis:"
+                android:textColor="@color/black"
+                android:padding="5sp"
+                android:textSize="20sp"
+                android:layout_weight="4"
+                android:layout_gravity="start"
+                />
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="Symptoms:"
+                android:textColor="@color/black"
+                android:padding="5sp"
+                android:textSize="20sp"
+                android:layout_weight="4"
+                android:layout_gravity="start"
+                />
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="Doctor:"
+                android:textColor="@color/black"
+                android:padding="5sp"
+                android:textSize="20sp"
+                android:layout_weight="2"
+                android:layout_gravity="start"
+                />
+        </TableRow>
+
+        <TableRow
+            android:background= "@drawable/border"
+            >
+
+            <TextView
+                android:id="@+id/date1"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text=""
+                android:textColor="@color/black"
+                android:padding="5sp"
+                android:textSize="20sp"
+                android:layout_weight="1.5"
+                android:layout_gravity="start"
+                android:background= "@drawable/border"
+                />
+
+            <TextView
+                android:id="@+id/diag1"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text=""
+                android:textColor="@color/black"
+                android:padding="5sp"
+                android:textSize="20sp"
+                android:layout_weight="4"
+                android:layout_gravity="start"
+                android:background= "@drawable/border"
+                />
+
+            <TextView
+                android:id="@+id/symp1"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text=""
+                android:textColor="@color/black"
+                android:padding="5sp"
+                android:textSize="20sp"
+                android:layout_weight="4"
+                android:layout_gravity="start"
+                android:background= "@drawable/border"
+                />
+
+            <TextView
+                android:id="@+id/doc1"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text=""
+                android:textColor="@color/black"
+                android:padding="5sp"
+                android:textSize="20sp"
+                android:layout_weight="2"
+                android:layout_gravity="start"
+                android:background= "@drawable/border"
+                />
+        </TableRow>
+
+        <TableRow
+            android:background= "@drawable/border">
+
+            <TextView
+                android:id="@+id/date2"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text=""
+                android:textColor="@color/black"
+                android:padding="5sp"
+                android:textSize="20sp"
+                android:layout_weight="1.5"
+                android:layout_gravity="start"
+                android:background= "@drawable/border"
+                />
+
+            <TextView
+                android:id="@+id/diag2"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text=""
+                android:textColor="@color/black"
+                android:padding="5sp"
+                android:textSize="20sp"
+                android:layout_weight="4"
+                android:layout_gravity="start"
+                android:background= "@drawable/border"
+                />
+
+            <TextView
+                android:id="@+id/symp2"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text=""
+                android:textColor="@color/black"
+                android:padding="5sp"
+                android:textSize="20sp"
+                android:layout_weight="4"
+                android:layout_gravity="start"
+                android:background= "@drawable/border"
+                />
+
+            <TextView
+                android:id="@+id/doc2"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text=""
+                android:textColor="@color/black"
+                android:padding="5sp"
+                android:textSize="20sp"
+                android:layout_weight="2"
+                android:layout_gravity="start"
+                android:background= "@drawable/border"
+                />
+        </TableRow>
+
+        <TableRow
+            android:background= "@drawable/border">
+
+            <TextView
+                android:id="@+id/date3"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text=""
+                android:textColor="@color/black"
+                android:padding="5sp"
+                android:textSize="20sp"
+                android:layout_weight="1.5"
+                android:layout_gravity="start"
+                android:background= "@drawable/border"
+                />
+
+            <TextView
+                android:id="@+id/diag3"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text=""
+                android:textColor="@color/black"
+                android:padding="5sp"
+                android:textSize="20sp"
+                android:layout_weight="4"
+                android:layout_gravity="start"
+                android:background= "@drawable/border"
+                />
+
+            <TextView
+                android:id="@+id/symp3"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text=""
+                android:textColor="@color/black"
+                android:padding="5sp"
+                android:textSize="20sp"
+                android:layout_weight="4"
+                android:layout_gravity="start"
+                android:background= "@drawable/border"
+                />
+
+            <TextView
+                android:id="@+id/doc3"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text=""
+                android:textColor="@color/black"
+                android:padding="5sp"
+                android:textSize="20sp"
+                android:layout_weight="2"
+                android:layout_gravity="start"
+                android:background= "@drawable/border"
+                />
+        </TableRow>
+
+    </TableLayout>
+
+    <TextView
+        android:id="@+id/recTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="30dp"
+        android:text="Medical Record: "
+        android:textSize="20dp"
+        app:layout_constraintStart_toEndOf="@+id/navigationView"
+        app:layout_constraintTop_toBottomOf="@+id/medTable" />
+
+    <Button
+        android:id="@+id/expand"
+        android:layout_width="150dp"
+        android:layout_height="35dp"
+        android:layout_marginBottom="10dp"
+        android:background="@drawable/mybutton"
+        android:text="Expand Record"
+        android:textSize="10dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="30dp"
+        app:layout_constraintStart_toEndOf="@+id/recTitle"
+        app:layout_constraintTop_toBottomOf="@+id/medTable"/>
+
+    <TextView
+        android:id="@+id/chSymp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:text="Chief Symptom: "
+        android:textSize="20dp"
+        app:layout_constraintStart_toEndOf="@+id/navigationView"
+        app:layout_constraintTop_toBottomOf="@+id/recTitle" />
+
+    <EditText
+        android:id="@+id/symp"
+        android:layout_width="360dp"
+        android:layout_height="33dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="16dp"
+        app:layout_constraintStart_toEndOf="@+id/chSymp"
+        app:layout_constraintTop_toBottomOf="@+id/recTitle" />
+
+    <TextView
+        android:id="@+id/recTest"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="16dp"
+        android:text="Test: "
+        android:textSize="20dp"
+        app:layout_constraintStart_toEndOf="@+id/symp"
+        app:layout_constraintTop_toBottomOf="@+id/recTitle" />
+
+    <EditText
+        android:id="@+id/test"
+        android:layout_width="200dp"
+        android:layout_height="33dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="16dp"
+        app:layout_constraintStart_toEndOf="@+id/recTest"
+        app:layout_constraintTop_toBottomOf="@+id/recTitle" />
+
+    <TextView
+        android:id="@+id/recDiag"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:text="Diagnosis: "
+        android:textSize="20dp"
+        app:layout_constraintStart_toEndOf="@+id/navigationView"
+        app:layout_constraintTop_toBottomOf="@+id/chSymp" />
+
+    <EditText
+        android:id="@+id/diag"
+        android:layout_width="300dp"
+        android:layout_height="33dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="16dp"
+        app:layout_constraintStart_toEndOf="@+id/recDiag"
+        app:layout_constraintTop_toBottomOf="@+id/chSymp" />
+
+    <TextView
+        android:id="@+id/recResult"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:text="Test Result: "
+        android:textSize="20dp"
+        app:layout_constraintStart_toEndOf="@+id/diag"
+        app:layout_constraintTop_toBottomOf="@+id/chSymp" />
+
+    <EditText
+        android:id="@+id/result"
+        android:layout_width="250dp"
+        android:layout_height="33dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="16dp"
+        app:layout_constraintStart_toEndOf="@+id/recResult"
+        app:layout_constraintTop_toBottomOf="@+id/chSymp" />
 
 
 
