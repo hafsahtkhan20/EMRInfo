@@ -106,6 +106,7 @@ class MainActivity : AppCompatActivity() {
 
                     GlobalScope.launch(Dispatchers.IO) {
                         accessTokenRequest(jwt)
+                        MyApplication.jwt = jwt
                     }
 
                     Log.d("Hafsah", "JWT: $jwt")
@@ -167,6 +168,7 @@ class MainActivity : AppCompatActivity() {
                     Log.d("Hafsah", "AccessTokenBody : $accessTokenBody")
                     val json = JSONObject(accessTokenBody)
                     val token = json.getString("access_token")
+                    MyApplication.token = token
                     GlobalScope.launch(Dispatchers.IO) {
                         searchPatientByNameAndDOB(
                             token,
@@ -240,6 +242,7 @@ class MainActivity : AppCompatActivity() {
         val regex = Regex("""/([^/]+)/?$""")
         val matchResult = regex.find(fullUrl)
         val lastIndex = matchResult?.groupValues?.lastOrNull()
+        MyApplication.patientid = lastIndex.toString().lowercase().trimIndent()
 
         val fullResource = entry.getElementsByTagName("resource").item(0) as Element
         val fullRace = fullResource.getElementsByTagName("display").item(0) as Element
